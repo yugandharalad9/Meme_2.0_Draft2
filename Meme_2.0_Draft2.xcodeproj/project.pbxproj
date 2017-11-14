@@ -15,6 +15,8 @@
 		9826C7811FBB65930089946F /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826C7801FBB65930089946F /* TableViewController.swift */; };
 		9826C7831FBB65EB0089946F /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826C7821FBB65EB0089946F /* CollectionViewController.swift */; };
 		9826C7851FBB82470089946F /* MemeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826C7841FBB82470089946F /* MemeEditorViewController.swift */; };
+		9826C7881FBB9A550089946F /* AlfaSlabOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9826C7871FBB9A530089946F /* AlfaSlabOne-Regular.ttf */; };
+		9826C7891FBB9A550089946F /* AlfaSlabOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9826C7871FBB9A530089946F /* AlfaSlabOne-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,7 @@
 		9826C7801FBB65930089946F /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		9826C7821FBB65EB0089946F /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		9826C7841FBB82470089946F /* MemeEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeEditorViewController.swift; sourceTree = "<group>"; };
+		9826C7871FBB9A530089946F /* AlfaSlabOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlfaSlabOne-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,7 @@
 		9826C75F1FBB566E0089946F /* Meme_2.0_Draft2 */ = {
 			isa = PBXGroup;
 			children = (
+				9826C7861FBB99F00089946F /* Fonts */,
 				9826C7601FBB566E0089946F /* AppDelegate.swift */,
 				9826C7821FBB65EB0089946F /* CollectionViewController.swift */,
 				9826C7801FBB65930089946F /* TableViewController.swift */,
@@ -100,6 +104,14 @@
 				9826C7771FBB566E0089946F /* Info.plist */,
 			);
 			path = Meme_2.0_Draft2UITests;
+			sourceTree = "<group>";
+		};
+		9826C7861FBB99F00089946F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9826C7871FBB9A530089946F /* AlfaSlabOne-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +199,7 @@
 			files = (
 				9826C76B1FBB566E0089946F /* LaunchScreen.storyboard in Resources */,
 				9826C7681FBB566E0089946F /* Assets.xcassets in Resources */,
+				9826C7881FBB9A550089946F /* AlfaSlabOne-Regular.ttf in Resources */,
 				9826C7661FBB566E0089946F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +208,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9826C7891FBB9A550089946F /* AlfaSlabOne-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,10 +10,16 @@ import UIKit
 
 class MemeEditorViewController: UIViewController {
 
+    @IBOutlet var txtFieldTop: UITextField!
+    
+    @IBOutlet var txtFieldBottom: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.txtFieldTop.backgroundColor = UIColor.clear
+        self.txtFieldBottom.backgroundColor = UIColor.clear
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,5 +37,8 @@ class MemeEditorViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func btnCancelClicked(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
