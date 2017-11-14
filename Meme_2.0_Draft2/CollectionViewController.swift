@@ -12,6 +12,19 @@ private let reuseIdentifier = "Cell"
 
 class CollectionViewController: UICollectionViewController {
 
+    
+    @IBAction func NewMemeButtonClicked(_ sender: UIBarButtonItem) {
+        
+        if let navigationController = navigationController {
+            let memeEditorController = self.storyboard?.instantiateViewController(withIdentifier: "MemeEditorViewController")
+            navigationController.present(memeEditorController!, animated: true, completion: nil)
+            
+        }
+        
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
