@@ -54,6 +54,9 @@
                     <navigationItem key="navigationItem" id="lgV-AL-vSk">
                         <barButtonItem key="rightBarButtonItem" title="New Meme" springLoaded="YES" id="Jo3-lj-5Fq">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="tC4-qQ-Zbx" kind="show" id="CS3-BE-H9e"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
@@ -93,6 +96,9 @@
                     <navigationItem key="navigationItem" id="l1H-ag-cc4">
                         <barButtonItem key="rightBarButtonItem" title="New Meme" springLoaded="YES" id="meC-mS-VFk">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="tC4-qQ-Zbx" kind="show" id="5b8-jV-jsW"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
@@ -100,20 +106,27 @@
             </objects>
             <point key="canvasLocation" x="1377" y="733"/>
         </scene>
-        <!--View Controller-->
+        <!--MemeEditorController-->
         <scene sceneID="5Uy-56-uhP">
             <objects>
-                <viewController id="tC4-qQ-Zbx" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeEditorController" title="MemeEditorController" id="tC4-qQ-Zbx" customClass="MemeEditorController" customModule="Meme_2_0_Draft2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4GR-QY-yRp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="53w-ww-g7h"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="51e-iz-9jd"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Title" id="1UZ-ji-JP6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="7Xh-fy-k14"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SCq-pk-qou" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2602" y="720"/>
+            <point key="canvasLocation" x="2600.8000000000002" y="719.19040479760122"/>
         </scene>
         <!--Table View-->
         <scene sceneID="spE-v8-iN3">
@@ -158,4 +171,7 @@
         <image name="collection_30x30" width="30" height="30"/>
         <image name="table_30x30" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="5b8-jV-jsW"/>
+    </inferredMetricsTieBreakers>
 </document>
