@@ -10,6 +10,21 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
+    @IBOutlet var btnNewMeme: UIBarButtonItem!
+    
+  
+    
+    
+    @IBAction func newMemeButtonClicked(_ sender: UIBarButtonItem) {
+        
+        if let navigationController = navigationController{
+            let memeEditorController = self.storyboard?.instantiateViewController(withIdentifier: "MemeEditorViewController")
+            navigationController.present(memeEditorController!, animated: true, completion: nil)
+            
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -9,12 +9,17 @@
 import UIKit
 
 class MemeEditorController: UIViewController {
-
+    
+    @IBOutlet var btnOrganize: UIBarButtonItem!
+    @IBOutlet var btnCamera: UIBarButtonItem!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.tabBarController!.tabBar.isHidden = true
-       
+        
+        self.tabBarController?.tabBar.isHidden = true
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,6 +29,7 @@ class MemeEditorController: UIViewController {
 
     @IBAction func btnCancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
+        self.tabBarController?.tabBar.isHidden = false
     }
     
 }
