@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemeEditorViewController: UIViewController, UITextFieldDelegate {
+class MemeEditorViewController: UIViewController {
 
     @IBOutlet var txtFieldTop: UITextField!
     
@@ -20,6 +20,8 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         self.txtFieldTop.backgroundColor = UIColor.clear
         self.txtFieldBottom.backgroundColor = UIColor.clear
+        txtFieldTop.delegate = self
+        txtFieldBottom.delegate = self
     }
     
     
@@ -41,18 +43,35 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
         dismiss(animated: true, completion: nil)
     }
     
+    
+    
 }
 
-/* //Mark: - Extension for UITextFieldDelegate
-extension MemeEditorViewController: UITextFieldDelegate{
+ //Mark: - Extension for UITextFieldDelegate
+extension MemeEditorViewController: UITextFieldDelegate {
     
+    //textField should return
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        txtFieldTop.resignFirstResponder()
-        return true
+        
+        print("return key pressed")
+        
+        
+        if let nextTextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return false
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        txtFieldBottom.becomeFirstResponder()
+    //keyboard notifications
+    
+    func subscribeToKeyBoardNotifications()  {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+    }
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        print("Keyboard shows")
     }
 
-} */
+}
