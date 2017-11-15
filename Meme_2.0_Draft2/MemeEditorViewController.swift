@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemeEditorViewController: UIViewController {
+class MemeEditorViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var txtFieldTop: UITextField!
     
@@ -21,12 +21,11 @@ class MemeEditorViewController: UIViewController {
         self.txtFieldTop.backgroundColor = UIColor.clear
         self.txtFieldBottom.backgroundColor = UIColor.clear
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    
+    
+    
+   
 
     /*
     // MARK: - Navigation
@@ -37,8 +36,23 @@ class MemeEditorViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
     @IBAction func btnCancelClicked(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
     
 }
+
+/* //Mark: - Extension for UITextFieldDelegate
+extension MemeEditorViewController: UITextFieldDelegate{
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        txtFieldTop.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        txtFieldBottom.becomeFirstResponder()
+    }
+
+} */
