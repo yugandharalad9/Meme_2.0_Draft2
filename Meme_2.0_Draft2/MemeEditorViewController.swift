@@ -8,11 +8,11 @@
 
 import UIKit
 
-class MemeEditorViewController: UIViewController {
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet var txtFieldTop: UITextField!
-    
     @IBOutlet var txtFieldBottom: UITextField!
+    @IBOutlet weak var memeImageView: UIImageView!
     
     var keyBoardHeight: CGFloat = 0
     
@@ -26,18 +26,14 @@ class MemeEditorViewController: UIViewController {
         txtFieldBottom.delegate = self
     }
     
+    @IBAction func btnAlbum(_ sender: UIBarButtonItem) {
+        
+    }
     
-    
-    
-    
-   
     
     @IBAction func btnCancelClicked(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
-    
-    
-    
 }
 
  //Mark: - Extension for UITextFieldDelegate
@@ -103,10 +99,18 @@ extension MemeEditorViewController: UITextFieldDelegate {
         
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
-    
+   
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         subscribeToKeyBoardNotifications()
     }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.unsubscrideToKeyboardNotification()
+    }
 
 }
+
+

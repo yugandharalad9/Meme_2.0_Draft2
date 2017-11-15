@@ -154,14 +154,14 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="TOP" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V92-3b-oma">
-                                                <rect key="frame" x="0.0" y="32" width="335" height="24"/>
+                                                <rect key="frame" x="0.0" y="32" width="335" height="20"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="AlfaSlabOne-Regular" family="Alfa Slab One" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
                                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="BOTTOM" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3rm-qW-ppJ">
-                                                <rect key="frame" x="0.0" y="451" width="335" height="24"/>
+                                                <rect key="frame" x="0.0" y="451" width="335" height="20"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="AlfaSlabOne-Regular" family="Alfa Slab One" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -187,7 +187,11 @@
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="aal-JX-FeL"/>
                                         </constraints>
                                         <items>
-                                            <barButtonItem systemItem="organize" id="C4E-MJ-Vhm"/>
+                                            <barButtonItem systemItem="organize" id="C4E-MJ-Vhm">
+                                                <connections>
+                                                    <action selector="btnAlbum:" destination="a0L-9f-33f" id="u2y-zQ-zap"/>
+                                                </connections>
+                                            </barButtonItem>
                                             <barButtonItem width="543" style="plain" systemItem="fixedSpace" id="r5f-uE-EG1"/>
                                             <barButtonItem systemItem="camera" id="y3m-Yu-omT"/>
                                         </items>
@@ -209,6 +213,7 @@
                         <viewLayoutGuide key="safeArea" id="u9l-31-At3"/>
                     </view>
                     <connections>
+                        <outlet property="memeImageView" destination="GnM-nH-bUb" id="hfh-2Z-35C"/>
                         <outlet property="txtFieldBottom" destination="3rm-qW-ppJ" id="bCW-b9-iB3"/>
                         <outlet property="txtFieldTop" destination="V92-3b-oma" id="u9q-LI-vwm"/>
                     </connections>
