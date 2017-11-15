@@ -26,7 +26,37 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         txtFieldBottom.delegate = self
     }
     
-    @IBAction func btnAlbum(_ sender: UIBarButtonItem) {
+    //Action for Album Button
+    @IBAction func pickImageFromAlbum(_ sender: UIBarButtonItem) {
+        selectPic(_source: .photoLibrary)
+    }
+    
+    
+    //Action for Camera Button
+    @IBAction func pickImageFromCamera(_ sender: UIBarButtonItem) {
+        selectPic(_source: .camera)
+    }
+    
+    //Allowing UIImagePickerController to pick Image
+    func selectPic(_source: UIImagePickerControllerSourceType)  {
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        picker.sourceType = _source
+        present(picker, animated: true, completion: nil)
+        
+    }
+    
+    //Dismissing the UIImagePickerController
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    //Pushing the SelectedImage into memeImageView
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        memeImageView.image = selectedImage
+        dismiss(animated: true, completion: nil)
         
     }
     
@@ -34,6 +64,46 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBAction func btnCancelClicked(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+    
+    func saveMeme()  {
+        let meme = Meme(topText: txtFieldTop.text!, bottomText: txtFieldBottom.text!, originalImage: memeImageView.image!, memedImage: generateMemedImage())
+    }
+    
+    func generateMemedImage() -> UIImage {
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        
+        let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return memedImage
+    }
+    
+    
+    
+    @IBAction func shareButtonPressed(_ sender: UIBarButtonItem) {
+        let memedImage = generateMemedImage()
+        var memedImages = [UIImage]()
+        memedImages.append(memedImage)
+        
+        let activityController = UIActivityViewController(activityItems: memedImages as [AnyObject], applicationActivities: nil)
+        activityController.popoverPresentationController?.sourceView = self.view
+        
+        present(activityController, animated: true, completion: nil)
+        
+        activityController.completionWithItemsHandler = { (activity, success, items, error) in
+            print(success ? "SUCCESS!" : "FAILURE")
+            
+            if success {
+                self.saveMeme()
+                print("Memed Imaged saved")
+                self.dismiss(animated: true, completion: nil)
+            }
+            
+        }
+    }
+    
+    
+    
 }
 
  //Mark: - Extension for UITextFieldDelegate
