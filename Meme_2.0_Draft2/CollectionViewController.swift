@@ -8,10 +8,20 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+
 
 class CollectionViewController: UICollectionViewController {
 
+    @IBOutlet var myCollectionView: UICollectionView!
+    
+   private let reuseIdentifier = "Cell"
+    
+    var sentMemes: [Meme]! {
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        return appDelegate.memes
+        
+    }
+    
     
     @IBAction func NewMemeButtonClicked(_ sender: UIBarButtonItem) {
         
@@ -56,20 +66,23 @@ class CollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return sentMemes.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CustonCollectionViewCell
     
         // Configure the cell
-    
+        let memedImagesCollectionView = sentMemes[indexPath.row]
+        
+        cell.CollectionViewImage?.image = memedImagesCollectionView.memedImage
+        
         return cell
     }
 

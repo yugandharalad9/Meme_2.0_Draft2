@@ -122,16 +122,32 @@
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JHd-1E-Z7l">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="JHd-1E-Z7l" customClass="CustonCollectionViewCell" customModule="Meme_2_0_Draft2" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sQ7-pY-VLy">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        </imageView>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="sQ7-pY-VLy" firstAttribute="centerY" secondItem="JHd-1E-Z7l" secondAttribute="centerY" id="DWl-fS-wip"/>
+                                    <constraint firstAttribute="trailing" secondItem="sQ7-pY-VLy" secondAttribute="trailing" id="Qnl-7t-urM"/>
+                                    <constraint firstItem="sQ7-pY-VLy" firstAttribute="centerX" secondItem="JHd-1E-Z7l" secondAttribute="centerX" id="Rm3-H3-gXC"/>
+                                    <constraint firstAttribute="bottom" secondItem="sQ7-pY-VLy" secondAttribute="bottom" id="W9C-ie-WBY"/>
+                                    <constraint firstItem="sQ7-pY-VLy" firstAttribute="leading" secondItem="JHd-1E-Z7l" secondAttribute="leading" id="XEp-xp-HW6"/>
+                                    <constraint firstItem="sQ7-pY-VLy" firstAttribute="top" secondItem="JHd-1E-Z7l" secondAttribute="top" id="wDW-d6-NKi"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="CollectionViewImage" destination="sQ7-pY-VLy" id="ruw-iX-U2R"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -147,10 +163,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="myCollectionView" destination="ZuJ-j2-YDN" id="xbp-RP-Yt4"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bM-ao-nGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1377" y="733"/>
+            <point key="canvasLocation" x="1376.8" y="732.68365817091455"/>
         </scene>
         <!--MemeEditorViewController-->
         <scene sceneID="pA1-0O-tny">

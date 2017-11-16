@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8F382A201FBDF26800B3833F /* DetailedMemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F382A1F1FBDF26800B3833F /* DetailedMemeViewController.swift */; };
+		8F382A261FBE0DAA00B3833F /* CustonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F382A251FBE0DAA00B3833F /* CustonCollectionViewCell.swift */; };
 		8F837FDB1FBCEBEE00B318DF /* MemeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F837FDA1FBCEBEE00B318DF /* MemeStruct.swift */; };
 		9826C7611FBB566E0089946F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826C7601FBB566E0089946F /* AppDelegate.swift */; };
 		9826C7661FBB566E0089946F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9826C7641FBB566E0089946F /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		8F382A1F1FBDF26800B3833F /* DetailedMemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedMemeViewController.swift; sourceTree = "<group>"; };
+		8F382A251FBE0DAA00B3833F /* CustonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustonCollectionViewCell.swift; sourceTree = "<group>"; };
 		8F837FDA1FBCEBEE00B318DF /* MemeStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeStruct.swift; sourceTree = "<group>"; };
 		9826C75D1FBB566E0089946F /* Meme_2.0_Draft2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meme_2.0_Draft2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9826C7601FBB566E0089946F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				9826C7821FBB65EB0089946F /* CollectionViewController.swift */,
 				9826C7801FBB65930089946F /* TableViewController.swift */,
 				8F382A1F1FBDF26800B3833F /* DetailedMemeViewController.swift */,
+				8F382A251FBE0DAA00B3833F /* CustonCollectionViewCell.swift */,
 				8F837FDA1FBCEBEE00B318DF /* MemeStruct.swift */,
 				9826C7841FBB82470089946F /* MemeEditorViewController.swift */,
 				9826C7641FBB566E0089946F /* Main.storyboard */,
@@ -230,6 +233,7 @@
 				9826C7851FBB82470089946F /* MemeEditorViewController.swift in Sources */,
 				8F837FDB1FBCEBEE00B318DF /* MemeStruct.swift in Sources */,
 				8F382A201FBDF26800B3833F /* DetailedMemeViewController.swift in Sources */,
+				8F382A261FBE0DAA00B3833F /* CustonCollectionViewCell.swift in Sources */,
 				9826C7611FBB566E0089946F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
