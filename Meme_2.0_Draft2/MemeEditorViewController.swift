@@ -13,6 +13,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet var txtFieldTop: UITextField!
     @IBOutlet var txtFieldBottom: UITextField!
     @IBOutlet weak var memeImageView: UIImageView!
+    @IBOutlet weak var btnCamera: UIBarButtonItem!
     
     var keyBoardHeight: CGFloat = 0
     
@@ -67,6 +68,11 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     func saveMeme()  {
         let meme = Meme(topText: txtFieldTop.text!, bottomText: txtFieldBottom.text!, originalImage: memeImageView.image!, memedImage: generateMemedImage())
+        
+        //Add saved memedImages to the meme array in the Application Delegate
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     func generateMemedImage() -> UIImage {
@@ -173,6 +179,7 @@ extension MemeEditorViewController: UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         subscribeToKeyBoardNotifications()
+        btnCamera.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
     }
     
     
