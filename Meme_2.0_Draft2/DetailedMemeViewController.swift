@@ -19,8 +19,4 @@ class DetailedMemeViewController: UIViewController {
      
 }
     
-    @IBAction func BtnCancelPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
 }

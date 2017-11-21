@@ -38,13 +38,13 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let cellSize = CGSize(width: 200, height: 200)
+        let cellSize = CGSize(width: 100, height: 100)
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.itemSize = cellSize
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        layout.minimumLineSpacing = 10
-        layout.minimumInteritemSpacing = 10
+        layout.sectionInset = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+        layout.minimumLineSpacing = 1
+        layout.minimumInteritemSpacing = 1
         myCollectionView.setCollectionViewLayout(layout, animated: true)
         myCollectionView.reloadData()
         
