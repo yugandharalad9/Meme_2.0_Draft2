@@ -126,14 +126,14 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="JHd-1E-Z7l" customClass="CustonCollectionViewCell" customModule="Meme_2_0_Draft2" customModuleProvider="target">
-                                <rect key="frame" x="10" y="10" width="50" height="50"/>
+                                <rect key="frame" x="10" y="10" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sQ7-pY-VLy">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         </imageView>
                                     </subviews>
                                 </view>
@@ -145,6 +145,7 @@
                                     <constraint firstItem="sQ7-pY-VLy" firstAttribute="leading" secondItem="JHd-1E-Z7l" secondAttribute="leading" id="XEp-xp-HW6"/>
                                     <constraint firstItem="sQ7-pY-VLy" firstAttribute="top" secondItem="JHd-1E-Z7l" secondAttribute="top" id="wDW-d6-NKi"/>
                                 </constraints>
+                                <size key="customSize" width="100" height="100"/>
                                 <connections>
                                     <outlet property="CollectionViewImage" destination="sQ7-pY-VLy" id="ruw-iX-U2R"/>
                                 </connections>

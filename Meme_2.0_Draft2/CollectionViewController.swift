@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class CollectionViewController: UICollectionViewController {
+class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet var myCollectionView: UICollectionView!
     
@@ -37,14 +37,18 @@ class CollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        
+        let cellSize = CGSize(width: 200, height: 200)
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.itemSize = cellSize
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
+        myCollectionView.setCollectionViewLayout(layout, animated: true)
+        myCollectionView.reloadData()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,6 +70,7 @@ class CollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
+        
         return 1
     }
 
@@ -83,9 +88,24 @@ class CollectionViewController: UICollectionViewController {
         
         cell.CollectionViewImage?.image = memedImagesCollectionView.memedImage
         
+        
         return cell
     }
-
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        //calling VC from stroyboard
+        let detailImageVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailedMemeViewController") as! DetailedMemeViewController
+        
+        detailImageVC.detailMeme = sentMemes[indexPath.row]
+        
+        present(detailImageVC, animated: true, completion: nil)
+        
+    }
+    
+    
+    
+   
     // MARK: UICollectionViewDelegate
 
     /*
@@ -118,3 +138,5 @@ class CollectionViewController: UICollectionViewController {
     */
 
 }
+
+
