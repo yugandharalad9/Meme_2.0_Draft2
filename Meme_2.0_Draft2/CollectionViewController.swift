@@ -46,9 +46,14 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         layout.minimumLineSpacing = 1
         layout.minimumInteritemSpacing = 1
         myCollectionView.setCollectionViewLayout(layout, animated: true)
+        
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         myCollectionView.reloadData()
-        
-        
+        self.tabBarController!.tabBar.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {

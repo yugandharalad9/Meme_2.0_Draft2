@@ -16,7 +16,7 @@ class DetailedMemeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.detailedImageView.image = detailMeme.memedImage
-     
+        self.tabBarController!.tabBar.isHidden = true
 }
     
 }

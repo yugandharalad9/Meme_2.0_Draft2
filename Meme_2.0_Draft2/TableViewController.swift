@@ -22,6 +22,7 @@ class TableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.tableView.reloadData()
+        self.tabBarController!.tabBar.isHidden = false
     }
     
     
@@ -82,7 +83,8 @@ class TableViewController: UITableViewController {
         
         detailedImageViewController.detailMeme = memedImages[indexPath.row]
         
-        present(detailedImageViewController, animated: true, completion: nil)
+        //present(detailedImageViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(detailedImageViewController, animated: true)
         
     }
    
