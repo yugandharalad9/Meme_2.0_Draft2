@@ -101,11 +101,8 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         
         //calling VC from stroyboard
         let detailImageVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailedMemeViewController") as! DetailedMemeViewController
-        
         detailImageVC.detailMeme = sentMemes[indexPath.row]
-        
-        present(detailImageVC, animated: true, completion: nil)
-        
+        self.navigationController?.pushViewController(detailImageVC, animated: true)
     }
     
     

@@ -204,18 +204,18 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GnM-nH-bUb">
                                                 <rect key="frame" x="0.0" y="8" width="335" height="491"/>
-                                                <color key="backgroundColor" red="1" green="0.74138782655936242" blue="0.35693346946736915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="V92-3b-oma">
-                                                <rect key="frame" x="0.0" y="32" width="335" height="28"/>
+                                                <rect key="frame" x="0.0" y="48" width="335" height="28"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                                <color key="textColor" red="0.90810889005661011" green="0.9736974835395813" blue="0.92413133382797241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="AlfaSlabOne-Regular" family="Alfa Slab One" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
                                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="3rm-qW-ppJ">
                                                 <rect key="frame" x="0.0" y="451" width="335" height="28"/>
-                                                <color key="textColor" red="0.90810889005661011" green="0.9736974835395813" blue="0.92413133382797241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="AlfaSlabOne-Regular" family="Alfa Slab One" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                             </textField>
@@ -231,7 +231,7 @@
                                             <constraint firstItem="GnM-nH-bUb" firstAttribute="leading" secondItem="Nqw-fw-8sL" secondAttribute="leading" id="Toq-MV-zb1"/>
                                             <constraint firstItem="3rm-qW-ppJ" firstAttribute="top" secondItem="GnM-nH-bUb" secondAttribute="bottom" constant="-48" id="jXq-Ud-qvI"/>
                                             <constraint firstItem="GnM-nH-bUb" firstAttribute="bottom" secondItem="Nqw-fw-8sL" secondAttribute="bottomMargin" constant="-12" id="lqJ-u5-wbr"/>
-                                            <constraint firstItem="V92-3b-oma" firstAttribute="top" secondItem="Nqw-fw-8sL" secondAttribute="top" constant="32" id="qcM-qQ-ki9"/>
+                                            <constraint firstItem="V92-3b-oma" firstAttribute="top" secondItem="Nqw-fw-8sL" secondAttribute="top" constant="48" id="qcM-qQ-ki9"/>
                                         </constraints>
                                     </view>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4GH-Ja-rFl">
