@@ -16,6 +16,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var btnCamera: UIBarButtonItem!
     @IBOutlet var navigationBar: UINavigationBar!
     @IBOutlet var toolBar: UIToolbar!
+    @IBOutlet var shareButton: UIBarButtonItem!
     
     var keyBoardHeight: CGFloat = 0
     
@@ -29,6 +30,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         txtFieldBottom.delegate = self
         configureDefaultTextFieldSettings(textField: txtFieldTop)
         configureDefaultTextFieldSettings(textField: txtFieldBottom)
+        shareButton.isEnabled = false
     }
     
     //defining default text attributes
@@ -70,6 +72,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         memeImageView.image = selectedImage
+        shareButton.isEnabled = true
         dismiss(animated: true, completion: nil)
         
     }
