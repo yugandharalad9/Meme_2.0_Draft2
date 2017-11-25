@@ -11,5 +11,5 @@ import UIKit
 class CustonCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var CollectionViewImage: UIImageView!
-    
 }
+
