@@ -27,7 +27,18 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         self.txtFieldBottom.backgroundColor = UIColor.clear
         txtFieldTop.delegate = self
         txtFieldBottom.delegate = self
+        configureDefaultTextFieldSettings(textField: txtFieldTop)
+        configureDefaultTextFieldSettings(textField: txtFieldBottom)
     }
+    
+    //defining default text attributes
+    let memeTextAttributes: [String: Any] = [NSAttributedStringKey.strokeColor.rawValue: UIColor.black, NSAttributedStringKey.foregroundColor.rawValue: UIColor.white, NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 20) ?? 20, NSAttributedStringKey.strokeWidth.rawValue: 5]
+    
+    func configureDefaultTextFieldSettings(textField: UITextField)  {
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = .center
+    }
+    
     
     //Action for Album Button
     @IBAction func pickImageFromAlbum(_ sender: UIBarButtonItem) {
