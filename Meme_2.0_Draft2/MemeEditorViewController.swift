@@ -24,21 +24,23 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.txtFieldTop.backgroundColor = UIColor.clear
-        self.txtFieldBottom.backgroundColor = UIColor.clear
-        txtFieldTop.delegate = self
-        txtFieldBottom.delegate = self
+        //self.txtFieldTop.backgroundColor = UIColor.clear
+        //self.txtFieldBottom.backgroundColor = UIColor.clear
+        //txtFieldTop.delegate = self
+        //txtFieldBottom.delegate = self
         configureDefaultTextFieldSettings(textField: txtFieldTop)
         configureDefaultTextFieldSettings(textField: txtFieldBottom)
         shareButton.isEnabled = false
     }
     
     //defining default text attributes
-    let memeTextAttributes: [String: Any] = [NSAttributedStringKey.strokeColor.rawValue: UIColor.black, NSAttributedStringKey.foregroundColor.rawValue: UIColor.white, NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 20) ?? 20, NSAttributedStringKey.strokeWidth.rawValue: 5]
+    let memeTextAttributes: [String: Any] = [NSAttributedStringKey.strokeColor.rawValue: UIColor.black, NSAttributedStringKey.foregroundColor.rawValue: UIColor.white, NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 30) ?? 30, NSAttributedStringKey.strokeWidth.rawValue: 5]
     
     func configureDefaultTextFieldSettings(textField: UITextField)  {
         textField.defaultTextAttributes = memeTextAttributes
         textField.textAlignment = .center
+        textField.delegate = self
+        textField.backgroundColor = UIColor.clear
     }
     
     
