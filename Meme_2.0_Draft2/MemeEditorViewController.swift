@@ -34,7 +34,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     //defining default text attributes
-    let memeTextAttributes: [String: Any] = [NSAttributedStringKey.strokeColor.rawValue: UIColor.black, NSAttributedStringKey.foregroundColor.rawValue: UIColor.white, NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 30) ?? 30, NSAttributedStringKey.strokeWidth.rawValue: 5]
+    let memeTextAttributes: [String: Any] = [NSAttributedStringKey.strokeColor.rawValue: UIColor.black, NSAttributedStringKey.foregroundColor.rawValue: UIColor.white, NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 30) ?? 30, NSAttributedStringKey.strokeWidth.rawValue: -5]
     
     func configureDefaultTextFieldSettings(textField: UITextField)  {
         textField.defaultTextAttributes = memeTextAttributes
