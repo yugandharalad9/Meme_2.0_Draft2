@@ -24,9 +24,7 @@ class TableViewController: UITableViewController {
         self.tableView.reloadData()
         self.tabBarController!.tabBar.isHidden = false
     }
-    
-    
-    
+   
     @IBAction func newMemeButtonClicked(_ sender: UIBarButtonItem) {
         
         if let navigationController = navigationController{
@@ -35,7 +33,6 @@ class TableViewController: UITableViewController {
             
         }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

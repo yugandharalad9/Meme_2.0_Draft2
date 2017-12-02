@@ -22,12 +22,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        //self.txtFieldTop.backgroundColor = UIColor.clear
-        //self.txtFieldBottom.backgroundColor = UIColor.clear
-        //txtFieldTop.delegate = self
-        //txtFieldBottom.delegate = self
         configureDefaultTextFieldSettings(textField: txtFieldTop)
         configureDefaultTextFieldSettings(textField: txtFieldBottom)
         shareButton.isEnabled = false
