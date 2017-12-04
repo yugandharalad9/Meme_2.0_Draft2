@@ -142,14 +142,8 @@ extension MemeEditorViewController: UITextFieldDelegate {
         
         print("return key pressed")
         
-        
-        if let nextTextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
-            nextTextField.becomeFirstResponder()
-            print("goes in txtfield bottom")
-            frameShifts()
-        } else {
             textField.resignFirstResponder()
-        }
+        
         return false
     }
     
@@ -174,7 +168,13 @@ extension MemeEditorViewController: UITextFieldDelegate {
     
     @objc func keyboardWillShow (_ notification: Notification) {
         print("Keyboard shows")
-        keyBoardHeight = getKeyboardHeight(notification)
+        
+        if txtFieldBottom.isEditing {
+            keyBoardHeight = getKeyboardHeight(notification)
+            frameShifts()
+        }
+        
+        
     }
     
     //keyboard height
